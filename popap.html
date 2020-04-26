@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+	        <script type="text/javascript" src="https://yastatic.net/jquery/3.3.1/jquery.js"></script>
+	<style type="text/css">
+		.modal{
+			margin: 0 auto;
+			height: 500px;
+			width: 500px;
+			background: #fff;
+			position: relative;
+
+		}
+		.overlay{
+			position: absolute;
+			bottom: 0;
+			top: 0;
+			background: #ccc;
+			width: 100%
+		}
+		.modal:not(.active),.overlay:not(.active){
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<button class="open">открыть</button>
+	<div class="overlay"></div>
+	<div class="modal">
+		<button class="close">закрыть</button>
+	</div>
+
+
+	<script type="text/javascript">
+		function Popap(options) {
+			this.modal=document.querySelector(options.modal);
+			this.overlay=document.querySelector(options.overlay)
+		}
+		Popap.prototype.open = function(content) {
+			this.modal.innerHTML+=content;
+			this.modal.classList.add('active');
+			this.overlay.classList.add('active');
+		};
+		Popap.prototype.close = function() {
+			this.modal.classList.remove('active');
+			this.overlay.classList.remove('active')
+		};
+		window.onload=function () {
+			const obj=new Popap({
+				modal:'.modal',
+				overlay:'.overlay'
+			})
+			$('.open').on('click',function () {
+				obj.open('!!!!!')
+			});
+			$('.close,.overlay').on('click',function () {
+				obj.close()
+			})
+
+
+		}
+	</script>
+</body>
+</html>

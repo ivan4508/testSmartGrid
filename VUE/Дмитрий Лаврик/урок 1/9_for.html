@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="sample">
+                <button type="button" class="btn btn-default" @click='addNumber'>button</button>
+                <button type="button" class="btn btn-default" @click='sortNumber'>button</button>
+                
+                <ul class="list-group">
+                    <li class="list-group-item" v-for='(number,index) in numbers'
+                    @mouseenter='onMouseEnter($event,index)'
+                    @mouseleave='onMouseLeave($event,index)'>{{index}} --- {{number}}</li>
+                </ul>
+                
+                <table class="table table-hover">
+                   
+                    <tbody>
+                        <tr v-for='(key,value,index) in info'>
+                            <td>{{index}}</td>
+                            <td>{{value}}</td>
+                            <td>{{key}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+        </div>
+ 
+        
+        
+
+    </div>
+    <script>
+        let sample=new Vue({
+            el:'.sample',
+            data:{
+                numbers:[],
+                info:{
+                    name:'Ivan',
+                    email:'ivan.4508@yandex.ru'
+                }
+            },
+            methods:{
+                addNumber(){
+                    this.numbers.push(Math.ceil(Math.random()*10));
+                },
+                sortNumber(){
+                    this.numbers.sort((a,b)=>a>b ? 1 : -1);
+                },
+                onMouseEnter(event,index){
+                    if (index & 1) {
+                        event.target.style.color="red"
+                    }
+                },
+                onMouseLeave(event,index){
+                    if (index & 1) {
+                        event.target.style.color='black'
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

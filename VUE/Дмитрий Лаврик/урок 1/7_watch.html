@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="sample">
+            <div class="form-group"><input type="text" class="form-control" v-model="firsName"></div>
+            <div class="form-group"><input type="text" class="form-control" v-model="lastName"></div>
+            <div class="form-group"><input type="text" class="form-control" v-model="promo"></div>
+            <h1>{{fullName}}</h1>
+            
+            <button type="button" class="btn btn-default" @click="showText=!showText">Кнопка</button>
+            <h2 v-if="showText">Ваша скидка {{sale}}%</h2>
+        </div>
+    </div>
+    <script>
+        function getSale(code,callback) {
+            let 
+            codes={
+                sale1:10,
+                sale2:20
+            },
+            sale=(codes[code]!==undefined) ? codes[code] : 0;
+            setTimeout(() => {
+                callback(sale)
+            }, 500);
+        }
+        let sample=new Vue({
+            el:'.sample',
+            data:{
+                firsName:'',
+                lastName:'',
+                promo:'',
+                sale:0,
+                showText:false
+            },
+            computed:{
+                fullName(){
+                    return this.firsName + ' ' +this.lastName;
+                }
+            },
+            watch:{
+                promo(){
+                    getSale(this.promo,(sale)=>this.sale=sale)
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>

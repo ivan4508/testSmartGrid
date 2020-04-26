@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+	        <script type="text/javascript" src="https://yastatic.net/jquery/3.3.1/jquery.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+		class Animal{
+			constructor(name,x,y){
+				this.name=name;
+				this.x=x;
+				this.y=y;
+				this.weight=5;
+			}
+			eat(){
+				this.weight++
+			}
+			log(){
+				console.log(this.name+'--'+this.x+'--'+this.y+'--'+this.weight)
+			}
+		};
+		class Cat extends Animal{
+			constructor(name,x,y){
+				super(name,x,y);
+				this.lifes=5
+			}
+		};
+		class Dog extends Animal{
+		}
+		window.onload=function () {
+			let cat=new Cat('Васька',10,50);
+			let dog=new Dog('Бобик',10,50);
+			cat.eat();
+			cat.eat();
+			cat.eat();
+			cat.eat();
+			cat.eat();
+			cat.eat();
+			cat.log();
+			dog.eat();
+			dog.eat();
+			dog.eat();
+			dog.eat();
+			dog.eat();
+			dog.eat();
+			dog.eat();
+			dog.eat();
+			dog.eat();
+			dog.eat();
+			dog.eat();
+			dog.eat();
+			dog.log();
+		}
+
+	</script>
+</body>
+</html>

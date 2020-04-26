@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="js/vue.js"></script>
+    <style>
+        .fade-enter{
+        
+        }
+
+        .fade-enter-active{
+            animation: slideIn 0.5s;    
+        }
+
+        .fade-enter-to{
+            
+        }
+
+        .fade-leave{
+            
+        }
+
+        .fade-leave-active{
+            animation: slideOut 0.5s forwards;
+        }
+
+        .fade-leave-to{
+            
+        }
+
+        @keyframes slideIn{
+            from{transform: translateX(-100vw);}
+            to{transform: translateX(0px);}
+        }
+
+        @keyframes slideOut{
+            from{transform: translateX(0px);}
+            to{transform: translateX(-100vw);}
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="sample">
+            <form>
+                <div class="form-group">
+                    <label>Guests</label>
+                    <input type="button" class="btn btn-primary" value="+" @click="addGuest">
+                </div>
+                <transition-group name="fade" tag="div">
+                    <div class="form-group" v-for="(name, key, index) in guests" :key="key">
+                        <label @dblclick="deleteGuest(key)">Guest {{ index + 1 }}</label>
+                        <input type="text" class="form-control" @input="onInput(key, $event)">
+                    </div>
+                </transition-group>
+                <hr>
+                <button class="btn btn-success">Send Data</button>
+            </form>
+            <div>
+                <h2>All done!</h2>
+                <table class="table table-bordered">
+                    <tr>
+                        <td>Guests</td>
+                        <td>
+                            <ul class="list-group">
+                                <li class="list-group-item" v-for="guest in guests">
+                                    {{ guest }}
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el: '.sample',
+            data: {
+                guests: {},
+                i: 0
+            },
+            methods: {
+                addGuest(){
+                    this.i++;
+                    this.$set(this.guests, this.i, '');
+                },
+                deleteGuest(ind){
+                    this.$delete(this.guests, ind)
+                },
+                onInput(i, e){
+                    this.guests[i] = e.target.value;
+                    //this.$set(this.guests, i, e.target.value);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="https://yastatic.net/jquery/3.3.1/jquery.js"></script>
+    <style>
+        p {
+            font: 24px sans-serif;
+        }
+
+        .top {
+            padding: 10px 15px;
+            background: #ccc;
+            cursor: pointer;
+            position: fixed;
+            right: 30px;
+            bottom: 100px;
+            display: none;
+        }
+
+        .top.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="top">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos eveniet doloremque odit, corporis tempore vero
+            ex tempora numquam. Distinctio beatae atque pariatur quo nobis repellendus, minima magni in vitae,
+            consequuntur.</p>
+    </div>
+    <div>
+        <p>Accusantium distinctio eveniet provident, pariatur iste architecto asperiores quia perferendis veniam
+            repellendus laboriosam exercitationem ipsum quibusdam placeat quam, consectetur! Impedit amet animi pariatur
+            blanditiis optio incidunt alias ab et obcaecati.</p>
+    </div>
+    <div>
+        <p>Saepe corrupti expedita molestias tempora earum nihil quis deserunt, alias voluptas et, voluptatum doloribus
+            facere autem sint! Quisquam, error, quaerat. Tenetur natus repudiandae et laboriosam, reprehenderit id aut
+            est ducimus.</p>
+    </div>
+    <div>
+        <p>Iste ratione odio dignissimos pariatur quos nihil! Obcaecati sit animi necessitatibus id, nihil provident cum
+            distinctio sapiente, totam est fugiat neque tenetur, repellendus eius iste aliquid. Ex nemo, minus pariatur.
+        </p>
+    </div>
+    <div>
+        <p>Saepe commodi, repellendus. Minima minus dicta animi quis unde neque cupiditate natus, consectetur eligendi
+            facere harum praesentium officia, fugit dolore aliquid quisquam a? Dolorum velit autem temporibus ad itaque,
+            eveniet!</p>
+    </div>
+    <div>
+        <p>Corrupti expedita voluptas et similique sint eos aut ut, magnam, error quod aliquam fuga atque neque incidunt
+            libero nobis amet rerum. Error cum ipsam neque debitis nostrum illo numquam nihil.</p>
+    </div>
+    <div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos eveniet doloremque odit, corporis tempore vero
+            ex tempora numquam. Distinctio beatae atque pariatur quo nobis repellendus, minima magni in vitae,
+            consequuntur.</p>
+    </div>
+    <div>
+        <p>Accusantium distinctio eveniet provident, pariatur iste architecto asperiores quia perferendis veniam
+            repellendus laboriosam exercitationem ipsum quibusdam placeat quam, consectetur! Impedit amet animi pariatur
+            blanditiis optio incidunt alias ab et obcaecati.</p>
+    </div>
+    <div>
+        <p>Saepe corrupti expedita molestias tempora earum nihil quis deserunt, alias voluptas et, voluptatum doloribus
+            facere autem sint! Quisquam, error, quaerat. Tenetur natus repudiandae et laboriosam, reprehenderit id aut
+            est ducimus.</p>
+    </div>
+    <div>
+        <p>Iste ratione odio dignissimos pariatur quos nihil! Obcaecati sit animi necessitatibus id, nihil provident cum
+            distinctio sapiente, totam est fugiat neque tenetur, repellendus eius iste aliquid. Ex nemo, minus pariatur.
+        </p>
+    </div>
+    <div>
+        <p>Saepe commodi, repellendus. Minima minus dicta animi quis unde neque cupiditate natus, consectetur eligendi
+            facere harum praesentium officia, fugit dolore aliquid quisquam a? Dolorum velit autem temporibus ad itaque,
+            eveniet!</p>
+    </div>
+    <div>
+        <p>Corrupti expedita voluptas et similique sint eos aut ut, magnam, error quod aliquam fuga atque neque incidunt
+            libero nobis amet rerum. Error cum ipsam neque debitis nostrum illo numquam nihil.</p>
+    </div>
+    <div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos eveniet doloremque odit, corporis tempore vero
+            ex tempora numquam. Distinctio beatae atque pariatur quo nobis repellendus, minima magni in vitae,
+            consequuntur.</p>
+    </div>
+    <div>
+        <p>Accusantium distinctio eveniet provident, pariatur iste architecto asperiores quia perferendis veniam
+            repellendus laboriosam exercitationem ipsum quibusdam placeat quam, consectetur! Impedit amet animi pariatur
+            blanditiis optio incidunt alias ab et obcaecati.</p>
+    </div>
+    <div>
+        <p>Saepe corrupti expedita molestias tempora earum nihil quis deserunt, alias voluptas et, voluptatum doloribus
+            facere autem sint! Quisquam, error, quaerat. Tenetur natus repudiandae et laboriosam, reprehenderit id aut
+            est ducimus.</p>
+    </div>
+    <div>
+        <p>Iste ratione odio dignissimos pariatur quos nihil! Obcaecati sit animi necessitatibus id, nihil provident cum
+            distinctio sapiente, totam est fugiat neque tenetur, repellendus eius iste aliquid. Ex nemo, minus pariatur.
+        </p>
+    </div>
+    <div>
+        <p>Saepe commodi, repellendus. Minima minus dicta animi quis unde neque cupiditate natus, consectetur eligendi
+            facere harum praesentium officia, fugit dolore aliquid quisquam a? Dolorum velit autem temporibus ad itaque,
+            eveniet!</p>
+    </div>
+    <div>
+        <p>Corrupti expedita voluptas et similique sint eos aut ut, magnam, error quod aliquam fuga atque neque incidunt
+            libero nobis amet rerum. Error cum ipsam neque debitis nostrum illo numquam nihil.</p>
+    </div>
+    <a href="#top" class="top">Вверх</a>
+    <script>
+        $(function(){
+            $('.top').on('click',funcClick);
+            $(document).on('scroll',funcScroll);
+            function funcScroll(){
+                let top=pageYOffset;
+                top>200 ? $('.top').addClass('active') : $('.top').removeClass('active');
+            }
+
+            function funcClick(event){
+                event.preventDefault();
+                let $top=$('#top').offset().top;
+                $('body,html').animate({scrollTop:$top},500);
+
+            }
+        })
+       
+
+    </script>
+</body>
+
+</html>

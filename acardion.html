@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="https://yastatic.net/jquery/3.3.1/jquery.js"></script>
+	<style>
+		.row :first-child{
+			cursor: pointer;
+			color:red;
+		}
+		.row :last-child:not(.active){
+			display: none;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="row">
+		<div class="item">Вопрос</div>
+		<div class="item">Ответ</div>
+	</div>
+	<div class="row">
+		<div class="item">Вопрос</div>
+		<div class="item">Ответ</div>
+	</div>
+	<div class="row">
+		<div class="item">Вопрос</div>
+		<div class="item">Ответ</div>
+	</div>
+	<div class="row">
+		<div class="item">Вопрос</div>
+		<div class="item">Ответ</div>
+	</div>
+	<script>
+		$(function () {
+			function acard() {
+				$(this)
+				
+				.addClass('active2')
+				.next()
+				.slideDown(500,function(){
+					$('.active')
+					.not(this)
+					.removeClass('active')
+					.slideUp();
+				})
+				.addClass('active')
+				$('.active2').
+				on('click',thisAcard)
+
+			};
+			function thisAcard() {
+					$(this)
+					.off('click',thisAcard)
+					.removeClass('active2')
+					.next()
+					.stop(true,true)
+					.slideUp()
+				}
+			$('.item:first-child').on('click',acard)
+		})
+	</script>
+</body>
+</html>

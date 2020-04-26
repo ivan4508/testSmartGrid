@@ -1,0 +1,37 @@
+/* Заголовок 1 */
+h1 
+{ 	
+	color: #0000FF;
+}
+
+/* Заголовок 2 */
+h2 
+{ 	
+	color: #0000FF;
+}
+
+
+/* Таблица */
+table
+{
+	border-collapse:collapse;
+	font-family:'arial';
+}
+
+/* Строка */
+tr
+{
+	background-color:#DC63C2;
+	padding:7px;
+	font-size:1.1em;
+	border:1px black solid;
+	color:white;
+}
+
+/* Столбец */
+td
+{
+	padding:7px;
+	border:1px solid;
+}
+

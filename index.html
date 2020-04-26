@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		class Popap{
+			constructor(options){
+				this.modal=document.querySelector(options.modal);
+				this.overlay=document.querySelector(options.overlay);
+			}
+			open(content){
+				this.modal.innerHTML=constructor;
+				this.modal.classList.add('open');
+				this.overlay.classList.add('open');
+			}
+			close(){
+				this.modal.classList.remove('open');
+				this.overlay.classList.remove('open');
+			}
+		}
+		$(function () {
+			let modal=new Popap({
+				modal:'modal',
+				overlay:'overlay'
+			})
+			
+		})
+
+	</script>
+</body>
+</html>

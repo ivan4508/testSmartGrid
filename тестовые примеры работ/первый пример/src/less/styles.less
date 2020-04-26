@@ -1,0 +1,169 @@
+@import 'smart-grid.less';
+
+@main:#ffffff;
+@bgProduct:#f5f6f7;
+@bgfooterTop:#aa9b77;
+@textColor:#424242;
+@footerPadFirst:30px;
+
+.reset();
+.wrapper{
+	.wrapper();
+	.items{
+		.row-flex();
+		.item{
+			.col();
+		}
+	}
+}
+button{
+	cursor: pointer;
+}
+header{
+	position: relative;
+	color:@main;
+
+	.container{
+		position: absolute;
+		z-index: 2;
+		left: 0;
+		top: 10px;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		a{
+			color:@main;
+			text-decoration: none;
+		}
+
+		.items{
+			margin:20px 20px;
+
+			&:last-child{
+				flex-grow: 1;
+				.item{
+					margin:auto;
+					h1{
+						font-size: 3.5rem;
+					}
+					p{
+						font-size: 2.3rem;
+					}
+				}
+			}
+		}
+		
+	}
+
+
+	h1,p{
+		text-align: center;
+
+	}
+	.nav{
+		display: flex;
+		justify-content: space-between;
+	}
+	nav{
+		display: flex;
+		justify-content: space-around;
+		ul{
+			li{
+				float:left;
+				margin-right: 10px;
+			}
+		}
+
+	}
+
+}
+.menu{
+	background-color: @bgProduct;
+	min-height: 65px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding:0 25px;
+	label{
+		margin-right: 15px;
+		padding-left: 5px;
+	}
+	label,button{
+	text-transform: uppercase;
+	}
+	button{
+		color:@main;
+		background-color: @bgfooterTop;
+		padding:10px 15px;
+		border-radius: 15px;
+		
+	}
+}
+.flex{
+	display: flex;
+	&+.items{
+		margin:0;
+		&>.item{
+			.size(8);
+			.items:first-child,
+			.items:last-child{
+				justify-content: space-between;
+
+			}
+			.items:nth-child(2){
+				justify-content: center;
+			}
+
+		}
+	}
+}
+footer{
+	.items{
+		&:first-child{
+			background-color: @bgfooterTop;
+			padding:@footerPadFirst;
+
+			h2{
+				font-size: 2rem;
+			}
+			p{
+				font-size: 1.2rem;
+				border:2px solid #716854;
+				padding:@footerPadFirst;
+			}
+			h2,p{
+				text-align: center;
+				color:#716854;
+			}
+		}
+		&:nth-child(2){
+			background-color: #535253;
+			color:@main;
+
+		}
+		&:last-child{
+			.item{
+				.size(12);
+				&:last-child{
+					text-align: right;
+					li{
+						float: right;
+						margin-right: 10px;
+						
+						&::before{
+							content:'|';
+							margin-right: 10px;
+						}
+					}
+					p{
+						clear: both;
+					}
+
+				}
+			}
+		}
+
+	}
+
+}

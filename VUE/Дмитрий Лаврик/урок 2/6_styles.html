@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+    <link rel="stylesheet" href="css//bootstrap.min.css">
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="js/vue.js"></script>
+    <style>
+        .alert{
+            transition: min-height 0.5s;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+<div class="sample">
+    
+    <div class="alert" :style="[properties,minHeight]">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <strong>Title!</strong> Alert body ...
+    </div>
+    
+    <table class="table">
+
+        <tbody>
+            <tr v-for='(value,key) in properties'>
+                    <td>{{key}}</td>
+                    <td>
+                    <input type="text"  class="form-control" v-model='properties[key]' >
+                    </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <button type="button" class="btn btn-default" @click='height+=250'>button</button>
+    <p>{{minHeight[minHeight]}}</p>
+    
+    
+</div>
+</div>
+<script>
+    let sample=new Vue({
+        el:'.sample',
+        data:{
+            properties:{
+                'color':'#fff',
+                'background-color':'#000'
+            },
+            height:0
+        },
+        computed: {
+            minHeight() {
+                return {minHeight:this.height+'px'} 
+            }
+        },
+    });
+    
+</script>
+</body>
+</html>

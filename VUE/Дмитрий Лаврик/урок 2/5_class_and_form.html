@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+    <link rel="stylesheet" href="css//bootstrap.min.css">
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="js/vue.js"></script>
+    <style>
+            /* 
+        :class="string"
+        :class="array"
+        :class="obj"
+        :class="[str, obj]"
+        :class="['alert', 'some', {a: true, b: false}]"
+    */
+
+        .my-info{
+            font-style: italic;
+        }
+
+        .my-warning{
+            font-size: 20px;
+        }
+
+        .table-some{
+            color: #fff;
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="sample">
+    
+    <div class="alert" :class="divClassName">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <strong>Title!</strong> 3131
+    </div>
+    
+    <div class="radio">
+        <label>
+            <input type="radio"  value="info" v-model='divClass'>
+            info
+        </label>
+    </div>
+    <div class="radio">
+        <label>
+            <input type="radio"  value="warning" v-model='divClass'>
+            warning
+        </label>
+    </div>
+    
+    <div class="checkbox" v-for='(key,value) in flags'>
+        <label><!-- посмотреть здесь -->
+            <input type="checkbox" v-model='flags[value]'>
+            KEY:{{key}} VALUE:{{value}}
+        </label>
+    </div>
+    
+    
+    <table class="table" :class='flags'>
+        <tbody>
+            <tr>
+                <td>112121</td>
+                <td>31131</td>
+                <td>434234</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    
+        
+        
+    </div>
+</div>
+<script>
+let sample=new Vue({
+    el:'.sample',
+    data:{
+        divClass:'info',
+        flags:{
+            'table-bordered':false,
+            'table-hover':false,
+            'table-some':false
+        }
+    },
+    computed: {
+        divClassName() {
+            return ['alert-'+this.divClass,'alert-'+this.divClass]
+        }
+    },
+});
+</script>
+</body>
+</html>

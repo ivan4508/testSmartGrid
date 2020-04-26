@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="https://yastatic.net/jquery/3.3.1/jquery.js"></script>
+    <style>
+        .container{
+            display: block;
+            margin:0 auto;
+            width: 500px;
+            height: 500px;
+            position: relative;
+            overflow: hidden;
+        }
+        .container div{
+          
+            position: relative;
+        }
+
+        img{
+            width: 500px;
+            height: 500px;
+            position: absolute;
+        }
+        img:not(.active){
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <img class="active" src="./img/DSCN0529.png" alt="">
+            <img src="./img/DSCN0530.JPG" alt="">
+            <img src="./img/DSCN0532.png" alt="">
+            <img src="./img/DSCN0537.JPG" alt="">
+        </div>
+    </div>
+    <div>
+        <button class="prev">Назад</button>
+        <button class="next">Вперед</button>
+    </div>
+    <script>
+        $(function () {
+            let i=0,
+                $img=$('img').length,
+                funcImg=()=>{
+                    $('img').animate({
+                        opacity:0
+                    },500,function () {
+                        $('img').eq(i).animate({
+                            opacity:1
+                        })
+                    })
+                },
+                clickPrev=()=>{
+                    i--;
+                    funcImg();
+                    i<0 ? i = $img - 1 : '';
+                },
+                clickNext=()=>{
+                    i++;
+                    funcImg();
+                    i>=$img ? i = 0 :'';
+                };
+                $('.prev').on('click',clickPrev);
+                $('.next').on('click',clickNext);
+
+
+        })
+    </script>
+</body>
+</html>

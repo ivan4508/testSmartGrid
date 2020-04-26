@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>1</title>
+        <style>
+        html, body{
+            margin: 10px;
+            background: #eee;
+        }
+
+        .active{
+             box-shadow: 0 0 5px #f00;
+
+        }
+
+        .item{
+            margin: 10px;
+        }
+        </style>
+    </head>
+    <body>
+        <form>
+            <div class="items">
+                <div class="item">
+                    <input type="text" class="check">
+                </div>
+                <div class="item">
+                    <input type="text" class="check">
+                </div>
+                <div class="item">
+                    <input type="text" class="check">
+                </div>
+            </div>
+            <input type="button" class="addField" value="Добавить поле">
+        </form>
+        <script type="text/javascript" src="https://yastatic.net/jquery/3.3.1/jquery.js"></script>
+        <script>
+          $(function () {
+            const 
+            cloneInp=()=>{
+              let $el= $('.item').last().clone();
+              $el.children().val('');
+              $('.item').last().after($el);
+             
+            };
+            function validator() {
+              let valInp=$(this).val();
+              valInp==''
+              ?$(this).addClass('active')
+              :$(this).removeClass('active');
+            }
+
+
+            $('.addField').on('click',cloneInp);
+            $('form').on('input blur','.check',validator)
+          })
+        </script>
+    </body>
+</html>
